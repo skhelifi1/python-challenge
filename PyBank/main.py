@@ -7,8 +7,10 @@ profit_losses=[]
 with open (budget_data, encoding='utf-8') as csvfile:
     csvreader=csv.reader(csvfile, delimiter=",")
     header=next(csvfile)
-    for Months in csvreader:
-        print (Months)
+    total_months=len(list(csvfile))
+    print (total_months)
+   # for Months in csvreader:
+        #print (Months)
 
 #def Totals (total_numbers):
     #Months= str(total_numbers[0])
