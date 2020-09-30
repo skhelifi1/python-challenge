@@ -1,0 +1,6 @@
+---Analysis Summary---
+Total Months in budget data is {total_months}.
+The net total amount of Profit/Losses is ${Net_Total}.
+The Average of the changes in Profit/Losses is:{Round_Average_changes}.
+The greates increase in profit occurred in {date[profit_losses.index(max_increase)+1]} (${max_increase}).
+The greatest decrease in losses occurred in {date[profit_losses.index(max_decrease)+1]} (${max_decrease}).

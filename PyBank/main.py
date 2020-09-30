@@ -3,26 +3,26 @@ import csv
 import statistics
 def Totals(budget_data):
     profit_losses=[]
+    date=[]
     total_months=0
     for row in budget_data:
         profit_losses.append(int(row[1]))
+        date.append(str(row[0]))
         total_months+=1
         Net_Total=sum(profit_losses)
     Average_changes= float(statistics.mean(profit_losses))
+    Rounded_Average_changes=round(Average_changes,2)
     max_increase= max(profit_losses)
     max_decrease= min(profit_losses)
-    print (total_months)
-    print (Net_Total)
-    print(Average_changes)
+    
+    print(total_months)
+    print(Net_Total)
+    print(Rounded_Average_changes)
     print(max_increase)
     print(max_decrease)
-    date=[]    
-    for row in budget_data:
-        date.append(str(row[0]))
-        if row == max_increase:
-            print (date)
-        elif row == max_decrease:
-            print (date)
+    print(date[profit_losses.index(max_increase)+1])
+    print(date[profit_losses.index(max_decrease)+1])
+ 
 budget_data= os.path.join("Resources","budget_data.csv")
 
 with open (budget_data, encoding='utf-8') as csvfile:
@@ -30,11 +30,11 @@ with open (budget_data, encoding='utf-8') as csvfile:
      header= next(csvreader)
      Totals(csvreader)
 
-# Analysis = open("Analysis/Analysis.text", "w")
-# Analysis.write(f"---Analysis Summary---"
-# "Total Months in budget data is:{total_months}\n" 
-# "The net total amount of Profit/Losses is:{Net_Total}.\n" 
-# "The Average of the changes in Profit/Losses is {Average_changes}.]\n"
-# "The greates increase in profit is {max_increase}.\n" 
-# "The greatest decrease in losses is{max_decrease}.\n"
-#  textfile.close()
+Analysis = open("Analysis/Analysis.text", "w")
+Analysis.write(f"---Analysis Summary---\n"
+"Total Months in budget data is {total_months}.\n"
+"The net total amount of Profit/Losses is ${Net_Total}.\n" 
+"The Average of the changes in Profit/Losses is:{Round_Average_changes}.\n"
+"The greates increase in profit occurred in {date[profit_losses.index(max_increase)+1]} (${max_increase}).\n" 
+"The greatest decrease in losses occurred in {date[profit_losses.index(max_decrease)+1]} (${max_decrease}).\n")
+Analysis.close()
