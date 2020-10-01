@@ -1,7 +1,6 @@
 ----Election Summary & Results----
-The total number of votes cast is {} 
-The candidates who received votes in this election are: {}
-The following are the percentages of votes that each candidate has received:{}
-The candidates received the following votes: {}
-The winner of the election based on popular vote is: {}
+The total number of votes cast is 1048575 
+The candidates who received votes and their corresponding total votes in this election are: Counter({'Khan': 661583, 'Correy': 209046, 'Li': 146360, "O'Tooley": 31586})
+The following are the percentages of votes that each candidate has received:[O'Tooley:3.012] 
+The winner of the election based on popular vote is: Khan
 ----------------------------------------------------------------------------------------
