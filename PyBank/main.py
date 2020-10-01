@@ -22,19 +22,18 @@ def Totals(budget_data):
     print(max_decrease)
     print(date[profit_losses.index(max_increase)+1])
     print(date[profit_losses.index(max_decrease)+1])
- 
+
+    Analysis = open("Analysis/Analysis.text", "w")
+    Analysis.write(f"---Analysis Summary---\n"
+    f"Total Months in budget data is {total_months}.\n"
+    f"The net total amount of Profit/Losses is ${Net_Total}.\n" 
+    f"The Average of the changes in Profit/Losses is:{Rounded_Average_changes}.\n"
+    f"The greates increase in profit occurred in {date[profit_losses.index(max_increase)+1]} (${max_increase}).\n" 
+    f"The greatest decrease in losses occurred in {date[profit_losses.index(max_decrease)+1]} (${max_decrease}).\n")
+    Analysis.close()
 budget_data= os.path.join("Resources","budget_data.csv")
 
 with open (budget_data, encoding='utf-8') as csvfile:
      csvreader=csv.reader(csvfile, delimiter=",")
      header= next(csvreader)
      Totals(csvreader)
-
-Analysis = open("Analysis/Analysis.text", "w")
-Analysis.write(f"---Analysis Summary---\n"
-"Total Months in budget data is {total_months}.\n"
-"The net total amount of Profit/Losses is ${Net_Total}.\n" 
-"The Average of the changes in Profit/Losses is:{Round_Average_changes}.\n"
-"The greates increase in profit occurred in {date[profit_losses.index(max_increase)+1]} (${max_increase}).\n" 
-"The greatest decrease in losses occurred in {date[profit_losses.index(max_decrease)+1]} (${max_decrease}).\n")
-Analysis.close()
