@@ -3,14 +3,15 @@ import csv
 def Totals(election_data):
     candidate=[]
     total_number_votes=0
-    max_votes=661583
     winner=""
     names=[]
+    output=""
     for row in csvreader:
         total_number_votes+=1
         candidate.append(row[2])
     from collections import Counter
     candidate_count= Counter(candidate)
+    max_votes=max(Counter.values())
     for names,votes in candidate_count.items():
         vote_percent= round(100*votes/total_number_votes,3)
         List_candidate=f"[{names}:{vote_percent}]"
@@ -30,20 +31,15 @@ def Totals(election_data):
         f"The following are the percentages of votes that each candidate has received:{List_candidate} \n"
         f"The winner of the election based on popular vote is: {winner}\n"
         f"----------------------------------------------------------------------------------------")
-    Analysis.close()
-   
-
+    Analysis.close() 
 election_data= os.path.join("Resources","election_data.csv")
 
 with open (election_data, encoding='utf-8') as csvfile:
      csvreader=csv.reader(csvfile, delimiter=",")
      header= next(csvreader)
      Totals(csvreader)
-    
-#Total number of Votes cast
+
 #complete list of candidates who received votes
 #The percentage of votes each candidate won
 #total number of votes each candidate won
 #The winner of the election based on popular vote
-#print(f"Election Resultls"
-#print(---------------------------------------------)
