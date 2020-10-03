@@ -29,7 +29,7 @@ def Totals(election_data):
     Analysis.write(f"----Election Summary & Results----\n"
         f"The total number of votes cast is {total_number_votes} \n"
         f"The candidates who received votes and their corresponding total votes in this election are: {candidate_count}\n"
-        f"The following are the percentages of votes that each candidate has received:{candidate_output} \n"
+        f"The following are the percentages of votes that each candidate has received:{candidate_output}% \n"
         f"The winner of the election based on popular vote is: {winner}\n"
         f"----------------------------------------------------------------------------------------")
     Analysis.close() 

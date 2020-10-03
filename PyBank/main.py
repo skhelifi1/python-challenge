@@ -28,7 +28,7 @@ def Totals(budget_data):
     f"Total Months in budget data is {total_months}.\n"
     f"The net total amount of Profit/Losses is ${Net_Total}.\n" 
     f"The Average of the changes in Profit/Losses is:{Rounded_Average_changes}.\n"
-    f"The greates increase in profit occurred in {date[profit_losses.index(max_increase)+1]} (${max_increase}).\n" 
+    f"The greatest increase in profit occurred in {date[profit_losses.index(max_increase)+1]} (${max_increase}).\n" 
     f"The greatest decrease in losses occurred in {date[profit_losses.index(max_decrease)+1]} (${max_decrease}).\n")
     Analysis.close()
 budget_data= os.path.join("Resources","budget_data.csv")
